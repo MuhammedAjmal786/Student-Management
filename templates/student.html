@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+    <div class="student-dashboard-container container">
+            <h2 style="color:rgb(0, 255, 255);font-size: 50px;">Student Details</h2>
+            <div class="student-details">
+                <p style="color: #ffffff;font-size: 30px;"><strong style="color: #ffffff;font-size: 30px;">ID :</strong> {{ student.student_id }}</p>
+                <p style="color: #ffffff;font-size: 29px;"><strong style="color: #ffffff;font-size: 30px;">Name :</strong> {{ student.name }}</p>
+                <p style="color: #ffffff;font-size: 30px;"><strong style="color: #ffffff;font-size: 30px;">Age :</strong> {{ student.age }}</p>
+                <p style="color: #ffffff;font-size: 30px;"><strong style="color: #ffffff;font-size: 30px;">Gender:</strong> {{ student.gender }}</p>
+                <p style="color: #ffffff;font-size: 30px;"><strong style="color: #ffffff;font-size: 30px;">Course:</strong> {{ student.course }}</p>
+                <p style="color: #ffffff;font-size: 30px;"><strong style="color: #ffffff;font-size: 30px;">Scores :</strong> {{ student.scores }}</p>
+                <p style="color: #ffffff;font-size: 25px;"><strong style="color: #ffffff;font-size: 25px;">Attendance:</strong> _ {{ student.attendance }}</p>
+                <dev style="text-align: center">
+                    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+                </dev>
+        </dev>
+    </dev>
+</body>
+</html>

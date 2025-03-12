@@ -1,0 +1,218 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #018a94, #152435); /* Gradient background */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Shared container styles */
+.container {
+    background-color: #363636;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #0000001a;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Specific dashboard container */
+.dashboard-container {
+    max-width: 800px; /* Wider for table and form */
+    padding: 30px;
+    text-align: left; /* Changed to left for better label alignment */
+}
+
+/* Heading style */
+h2, h3 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    visibility: visible; /* Ensure headings are visible */
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+/* Flash message styling */
+.flash-message {
+    color: #d9534f; /* Red for error messages */
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+/* Label styling */
+label {
+    text-align: left;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    display: block; /* Ensure labels are on a new line */
+}
+
+/* Input and select styling */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #000000;
+    transition: border-color 0.3s ease;
+    border-color: rgb(231, 5, 5); /* Red border */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #74ebd5; /* Highlight on focus */
+}
+
+/* Button styling */
+button {
+    background-color: #647a76;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+button:hover {
+    background-color: #3f5569; /* Darker shade on hover */
+}
+
+/* Link styling */
+a {
+    color: #74ebd5;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Specific styles for register_teacher page */
+.register-container {
+    max-width: 450px; /* Slightly wider for more fields */
+}
+
+/* Specific styles for student_dashboard page */
+.student-dashboard-container {
+    max-width: 500px; /* Moderate width for student details */
+    padding: 30px;
+    text-align: left;
+}
+
+.student-details {
+    margin-bottom: 20px;
+}
+
+.student-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.student-details strong {
+    color: #333;
+    font-weight: 600;
+    display: inline-block;
+    width: 120px; /* Fixed width for alignment */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid hsl(0, 0%, 0%);
+}
+
+th {
+    background-color: #e2dddd;
+    color: #000000;
+    font-weight: 600;
+}
+
+td {
+    color: #000000;
+}
+
+tr:hover {
+    background-color: #bfd8d2; /* Hover effect for rows */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container, .register-container, .dashboard-container, .student-dashboard-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .student-details p {
+        font-size: 14px;
+    }
+
+    .student-details strong {
+        width: 100px;
+    }
+}

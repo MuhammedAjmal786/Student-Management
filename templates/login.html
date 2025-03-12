@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+    <div class="log container">
+        <dev style="text-align: center">
+            <h2>Login</h2>
+
+            <form method="POST" action="/login">
+                <label>User Type:</label>
+                <select name="user_type">
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select>
+                <br>
+                <label>ID:</label>
+                <input type="text" name="id" required>
+                <br>
+                <label>Password:</label>
+                <input type="password" name="password" required>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <dev style="text-align: center">
+            <button><a href="{{ url_for('register_teacher') }}">Register as Teacher</a></button>
+            </dev>
+        </dev>
+    </dev>
+</body>
+</html>

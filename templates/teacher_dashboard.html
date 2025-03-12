@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container container">
+        <h2>Teacher Dashboard </h2>
+
+        <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+        <h3>Add Student</h3>
+        <form method="POST">
+            <input type="hidden" name="action" value="add">
+            <label for="student_id">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+            <label for="scores">Scores:</label>
+            <input type="number" id="scores" name="scores" placeholder="e.g., 85,90" required>
+            <label for="attendance">Attendance (%):</label>
+            <input type="text" id="attendance" name="attendance" value="0%" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="email_mobile">Email/Mobile:</label>
+            <input type="text" id="email_mobile" name="email_mobile" required>
+            <button type="submit">Add Student</button>
+        </form>
+
+        <h3>Students List</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Scores</th>
+                <th>Attendance</th>
+                <th>Actions</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.student_id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.scores }}</td>
+                <td>{{ student.attendance }}</td>
+                <td>
+                    <!-- Edit Link (to open update form) -->
+                    <button><a href="{{ url_for('edit_student', student_id=student.student_id) }}">Edit</a></button>
+                    <!-- Delete Form -->
+                    <form method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="student_id" value="{{ student.student_id }}">
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this student?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+</body>
+</html>

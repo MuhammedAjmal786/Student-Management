@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container container">
+        <h2>Edit Student</h2>
+
+        <form method="POST">
+            <label for="student_id">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" value="{{ student.student_id }}" readonly>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ student.name }}" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" value="{{ student.age }}" required>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="Male" {% if student.gender == 'Male' %}selected{% endif %}>Male</option>
+                <option value="Female" {% if student.gender == 'Female' %}selected{% endif %}>Female</option>
+            </select>
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" value="{{ student.course }}" required>
+            <label for="scores">Scores:</label>
+            <input type="number" id="scores" name="scores" value="{{ student.scores }}" required>
+            <label for="attendance">Attendance (%):</label>
+            <input type="text" id="attendance" name="attendance" value="{{ student.attendance }}" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="{{ student.password }}" required>
+            <label for="email_mobile">Email/Mobile:</label>
+            <input type="text" id="email_mobile" name="email_mobile" value="{{ student.email_mobile }}" required>
+            <button type="submit">Save Changes</button>
+        </form>
+        <p><a href="{{ url_for('teacher_dashboard') }}">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>
